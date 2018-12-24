@@ -54,6 +54,7 @@ while True:
             gift_index += 1
         else:
             gift_index = 0
+    gift[2] = GIFT_SPEED
     gifts[gift_index] = gift
 
     santa_rect = santa.get_rect()
@@ -63,6 +64,8 @@ while True:
     gift_rect = gift[1].get_rect()
     gift_rect.x = gift[0][0]
     gift_rect.y = gift[0][1]
+
+    gift[2] = GIFT_SPEED
 
     if santa_rect.colliderect(gift_rect):
         score += 1
