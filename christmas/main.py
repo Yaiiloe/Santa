@@ -47,6 +47,7 @@ while True:
     gift[0][0] -= gift[2]
     if gift[0][0] < 0 - GIFT_WIDTH / 2:
         score -= 1
+        GIFT_SPEED += 1
         gift[0][0] = WIDTH + GIFT_WIDTH
         gift[0][1] = random.randint(0, HEIGHT)
         if gift_index < len(gifts) - 1:
@@ -65,6 +66,7 @@ while True:
 
     if santa_rect.colliderect(gift_rect):
         score += 1
+        GIFT_SPEED += 1
         gift[0][0] = WIDTH + GIFT_WIDTH
         gift[0][1] = random.randint(0, HEIGHT)
         if gift_index < len(gifts) - 1:
