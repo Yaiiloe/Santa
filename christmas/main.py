@@ -78,7 +78,7 @@ while True:
     if gift[0][0] < 0 - gift_rect.width:
         score -= 1
         gift[0][0] = WIDTH
-        gift[0][1] = random.randint(0, HEIGHT - gift_rect.height)
+        gift[0][1] = random.randint(0, HEIGHT - gift_rect.height)       # Prevent gift from flying out of window range
         if gift_index < len(gifts) - 1:
             gift_index += 1
         else:
@@ -110,7 +110,7 @@ while True:
         if santa_y > 0:
             santa_y -= 1
     elif pressed == pygame.K_DOWN:
-        if santa_y < HEIGHT - santa_rect.height:        # Prevent gift from flying out of window range
+        if santa_y < HEIGHT - santa_rect.height:
             santa_y += 1
 
     score_text_surf, score_text_rect = font.render('Score: ' + str(score), fgcolor=WHITE, size=20)
